@@ -14,9 +14,11 @@ int main() {
     std::ofstream outputFile("output.txt");
 
     if (inputFile.is_open() && outputFile.is_open()) {
+        int count = 1;
         while (std::getline(inputFile, line)) {
             std::string url = generateURL(line);
-            outputFile << url << std::endl;
+            outputFile << url << " Output/Track" << count << ".mp4" << std::endl;
+            count++;
         }
         inputFile.close();
         outputFile.close();
